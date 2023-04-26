@@ -27,7 +27,6 @@ class AlienInvasion:
             self.ship.update()
             self._update_screen()
             
-           
     def _check_events(self):
         """Reakcja na zdarzenia generowane przez klawiaturę i mysz."""
         #Oczekiwanie na naciśnięcie klawisza lub przycisku myszy.
