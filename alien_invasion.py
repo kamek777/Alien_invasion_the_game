@@ -8,7 +8,6 @@ from ship import Ship
 
 class AlienInvasion:
     """Ogólna klasa przeznaczona do zarządzania zasobami i sposobem działania gry."""
-    
     def __init__(self):
         """Inicjalizacja gry i utworzenie jej zasobów."""
         pygame.init()
