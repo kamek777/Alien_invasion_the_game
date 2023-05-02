@@ -33,6 +33,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
             
             #Usunięcie pocisków, które znajdują się poza ekranem.
@@ -125,6 +126,10 @@ class AlienInvasion:
         self.aliens.draw(self.screen)
         
         pygame.display.flip()           
+    
+    def _update_aliens(self):
+        """Uaktualnienie położenia wszystkich obcych we flocie."""
+        self.aliens.update()
             
 if __name__ == '__main__':
     #Utworzenie egzemplarza gry i jej uruchomienie.
