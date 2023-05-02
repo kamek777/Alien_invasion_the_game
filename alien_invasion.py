@@ -95,16 +95,17 @@ class AlienInvasion:
         alien_width = alien.rect.width
         available_space_x = self.settings.screen_width - (2* alien_width)
         number_aliens_x = available_space_x // (2* alien_width)
-        
         #Utworzenie pierwszego rzędu obcych.
         for alien_number in range(number_aliens_x):
-            #Utworzenie obcego i umieszczenie go w rzędzie.
-            alien = Alien(self)
-            alien.x = alien_width + 2 * alien_width * alien_number
-            alien.rect.x = alien.x
-            self.aliens.add(alien)
-        
-        
+            self._create_alien(alien_number)
+            
+    def _create_alien(self, alien_number):
+        """Utworzenie obcego i umieszczenie go w rzędzie.""" 
+        alien = Alien(self)
+        alien_width = alien.rect.width
+        alien.x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien.x
+        self.aliens.add(alien)   
     
     def _update_screen(self):
         """Uaktualnienie obrazów na ekranie i przejście do nowego ekranu."""
