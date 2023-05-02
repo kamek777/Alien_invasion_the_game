@@ -34,9 +34,12 @@ class AlienInvasion:
         while True:
             #Odświeżenie ekranu w trakcie każdej iteracji pętli.
             self._check_events()
-            self.ship.update()
-            self._update_bullets()
-            self._update_aliens()
+            
+            if self.stats.game_active:
+                self.ship.update()
+                self._update_bullets()
+                self._update_aliens()
+            
             self._update_screen()
             
             #Usunięcie pocisków, które znajdują się poza ekranem.
@@ -154,6 +157,9 @@ class AlienInvasion:
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
             self._ship_hit()
             
+        #Wyszukiwanie obcych docierających do dolnej krawędzi ekranu.
+        self._check_aliens_bottom
+            
     def _check_fleet_edges(self):
         """Odpowiednia reakcja, gdy obcy dotrze do krawędzi ekranu."""
         for alien in self.aliens.sprites():
@@ -169,19 +175,32 @@ class AlienInvasion:
 
     def _ship_hit(self):
         """Reakcja na uderzenie obcego w statek."""
-        #Zmniejszenie wartości przechowywanej w ships_left.
-        self.stats.ships_left -= 1
+        if self.stats.ships_left > 0:
+            #Zmniejszenie wartości przechowywanej w ships_left.
+            self.stats.ships_left -= 1
         
-        #Usunięcie zawartości list aliens i bullets.
-        self.aliens.empty()
-        self.bullets.empty()
+            #Usunięcie zawartości list aliens i bullets.
+            self.aliens.empty()
+            self.bullets.empty()
+            
+            #Utworzenie nowej floty i wyśrodkowanie statku.
+            self._create_fleet()
+            self.ship.center_ship()
+            
+            #Pauza
+            sleep(0.5)
         
-        #Utworzenie nowej floty i wyśrodkowanie statku.
-        self._create_fleet()
-        self.ship.center_ship()
+        else:
+            self.stats.game_active = False
         
-        #Pauza
-        sleep(0.5)
+    def _check_aliens_bottom(self):
+        """Sprawdzenie, czy którykolwiek obcy dotarł do dolnej krawędzi ekranu."""
+        screen_rect = self.screen.get_rect()
+        for alien in self.aliens.sprites():
+            if alien.rect.bottom >= screen_rect.bottom:
+                #Tak samo jak w przypadku zderzenia statku z obcym.
+                self._ship_hit()
+                break
 
 
 if __name__ == '__main__':
