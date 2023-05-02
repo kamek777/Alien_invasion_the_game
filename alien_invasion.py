@@ -128,9 +128,26 @@ class AlienInvasion:
         pygame.display.flip()           
     
     def _update_aliens(self):
-        """Uaktualnienie położenia wszystkich obcych we flocie."""
+        """
+        Sprawdzenie, czy flota obcych znajduje się przy krawędzi, a następnie uaktualnienie
+        położenia wszystkich obcych we flocie.
+        """
+        self._check_fleet_edges()
         self.aliens.update()
             
+    def _check_fleet_edges(self):
+        """Odpowiednia reakcja, gdy obcy dotrze do krawędzi ekranu."""
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_direction()
+                break
+            
+    def _change_fleet_direction(self):
+        """Przesunięcie całej floty w dół i zmiana kierunku, w którym się ona porusza."""
+        for alien in self.aliens.sprites():
+            alien.rect.y += self.settings.fleet_drop_speed
+        self.settings.fleet_direction *= -1
+
 if __name__ == '__main__':
     #Utworzenie egzemplarza gry i jej uruchomienie.
     ai = AlienInvasion()
