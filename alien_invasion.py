@@ -87,6 +87,10 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <=0:
                 self.bullets.remove(bullet)
+                
+        #Spradzenie, czy którykolwiek pocisk trafił obcego.
+        #Jeżeli tak, usuwamy zarówno pocisk, jak i obcego.
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)        
     
     def _create_fleet(self):
         """Utworzenie pełnej floty obcych."""
