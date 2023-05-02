@@ -88,8 +88,11 @@ class AlienInvasion:
             if bullet.rect.bottom <=0:
                 self.bullets.remove(bullet)
                 
-        #Spradzenie, czy którykolwiek pocisk trafił obcego.
-        #Jeżeli tak, usuwamy zarówno pocisk, jak i obcego.
+        self._check_bullet_alien_collisions()
+        
+    def _check_bullet_alien_collisions(self):
+        """Reakcja na kolizję między pociskiem i obcym."""
+        #Usunięcie wszystkich pocisków i obcych, między którymi doszło do kolizji.
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)   
         
         if not self.aliens:
