@@ -92,9 +92,6 @@ class AlienInvasion:
             #Ukrycie kursora myszy podczas grania.
             pygame.mouse.set_visible(False)
             
-        
-            
-    
     def _check_keydown_events(self, event):
         """Reakcja na naciśnięcie klawisza."""            
         if event.key == pygame.K_RIGHT:
@@ -140,6 +137,7 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
         
         if not self.aliens:
             #Pozbycie się istniejących pocisków, przyspieszenie gry i utworzenie nowej floty.
