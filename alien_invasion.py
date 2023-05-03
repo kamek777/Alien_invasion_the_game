@@ -132,9 +132,10 @@ class AlienInvasion:
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)   
         
         if not self.aliens:
-            #Pozbycie się istniejących pocisków i utworzenie nowej floty.
+            #Pozbycie się istniejących pocisków, przyspieszenie gry i utworzenie nowej floty.
             self.bullets.empty()
-            self._create_fleet()     
+            self._create_fleet()    
+            self.settings.increase_speed() 
     
     def _create_fleet(self):
         """Utworzenie pełnej floty obcych."""
