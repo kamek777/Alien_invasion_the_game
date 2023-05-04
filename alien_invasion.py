@@ -10,6 +10,7 @@ from button import Button
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+from sounds import SoundEffects
 
 
 class AlienInvasion:
@@ -36,6 +37,10 @@ class AlienInvasion:
         #Utworzenie przycisku Gra
         self.play_button = Button(self, self.screen, "Rozpocznij grę!")
         
+        #Utworzenie muzyki w tle
+        self.sound_effects = SoundEffects()
+        self.sound_effects.play_background_music()
+        
     def run_game(self):
         """Rozpoczęcie pętli głównej gry."""
         while True:
@@ -46,7 +51,7 @@ class AlienInvasion:
                 self.ship.update()
                 self._update_bullets()
                 self._update_aliens()
-            
+               
             self._update_screen()
             
             #Usunięcie pocisków, które znajdują się poza ekranem.
@@ -94,6 +99,7 @@ class AlienInvasion:
             
             #Ukrycie kursora myszy podczas grania.
             pygame.mouse.set_visible(False)
+            
             
             #Wyświetlenie pozostałej ilości statków do wykorzystania przez gracza.
             self.sb.prep_score()
