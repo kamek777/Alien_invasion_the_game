@@ -16,6 +16,7 @@ class GameStats:
         """Inicjalizacja danych statystycznych, które mogą zmieniać się w trakcie gry."""
         self.ships_left = self.settings.ship_limit
         self.score = 0
+        self.level = 1
         
     def get_score(self):
         """Wyświetlenie wyniku."""

@@ -85,12 +85,20 @@ class AlienInvasion:
             self.aliens.empty()
             self.bullets.empty()
             
+            self.sb.prep_score()
+            self.sb.prep_level()
+            
             #Utworzenie nowej floty i wyśrodkowanie statku.
             self._create_fleet()
             self.ship.center_ship()
             
             #Ukrycie kursora myszy podczas grania.
             pygame.mouse.set_visible(False)
+            
+            #Wyświetlenie pozostałej ilości statków do wykorzystania przez gracza.
+            self.sb.prep_score()
+            self.sb.prep_level()
+            self.sb.prep_ships()
             
     def _check_keydown_events(self, event):
         """Reakcja na naciśnięcie klawisza."""            
@@ -144,6 +152,10 @@ class AlienInvasion:
             self.bullets.empty()
             self._create_fleet()    
             self.settings.increase_speed() 
+            
+            #Inkrementacja numeru poziomu.
+            self.stats.level += 1 
+            self.sb.prep_level()
     
     def _create_fleet(self):
         """Utworzenie pełnej floty obcych."""
@@ -224,6 +236,7 @@ class AlienInvasion:
         if self.stats.ships_left > 0:
             #Zmniejszenie wartości przechowywanej w ships_left.
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
         
             #Usunięcie zawartości list aliens i bullets.
             self.aliens.empty()
