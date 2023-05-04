@@ -170,7 +170,8 @@ class AlienInvasion:
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
         available_space_x = self.settings.screen_width - (2 * alien_width)
-        number_aliens_x = available_space_x // (2 * alien_width)
+        number_aliens_x = 6
+        #available_space_x // (2 * alien_width)
         
         #Ustawienie, ile rzędów obcych zmieści się na ekranie.
         ship_height = self.ship.rect.height
@@ -251,9 +252,10 @@ class AlienInvasion:
             #Utworzenie nowej floty i wyśrodkowanie statku.
             self._create_fleet()
             self.ship.center_ship()
-            
+           
             #Pauza
             sleep(0.5)
+            
         
         else:
             self.stats.game_active = False
