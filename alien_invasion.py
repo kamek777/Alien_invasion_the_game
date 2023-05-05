@@ -37,9 +37,12 @@ class AlienInvasion:
         #Utworzenie przycisku Gra
         self.play_button = Button(self, self.screen, "Rozpocznij grę!")
         
-        #Utworzenie muzyki w tle
+        #Utworzenie muzyki w grze
         self.sound_effects = SoundEffects()
         self.sound_effects.play_background_music()
+        
+        
+        
         
     def run_game(self):
         """Rozpoczęcie pętli głównej gry."""
@@ -152,12 +155,14 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
+            self.sound_effects.play_sound_effect2()
         
         if not self.aliens:
             #Pozbycie się istniejących pocisków, przyspieszenie gry i utworzenie nowej floty.
             self.bullets.empty()
             self._create_fleet()    
             self.settings.increase_speed() 
+            
             
             #Inkrementacja numeru poziomu.
             self.stats.level += 1 
@@ -244,7 +249,7 @@ class AlienInvasion:
             #Zmniejszenie wartości przechowywanej w ships_left.
             self.stats.ships_left -= 1
             self.sb.prep_ships()
-        
+            
             #Usunięcie zawartości list aliens i bullets.
             self.aliens.empty()
             self.bullets.empty()
@@ -260,6 +265,7 @@ class AlienInvasion:
         else:
             self.stats.game_active = False
             pygame.mouse.set_visible(True)
+            self.sound_effect_game_over.play() 
         
     def _check_aliens_bottom(self):
         """Sprawdzenie, czy którykolwiek obcy dotarł do dolnej krawędzi ekranu."""
