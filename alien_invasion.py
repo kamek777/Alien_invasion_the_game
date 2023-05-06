@@ -12,7 +12,6 @@ from bullet import Bullet
 from alien import Alien
 from sounds import SoundEffects
 
-
 class AlienInvasion:
     """Ogólna klasa przeznaczona do zarządzania zasobami i sposobem działania gry."""
     def __init__(self):
@@ -93,7 +92,6 @@ class AlienInvasion:
             self.aliens.empty()
             self.bullets.empty()
             
-            self.sb.prep_score()
             self.sb.prep_level()
             
             #Utworzenie nowej floty i wyśrodkowanie statku.
@@ -228,7 +226,7 @@ class AlienInvasion:
             self._ship_hit()
             
         #Wyszukiwanie obcych docierających do dolnej krawędzi ekranu.
-        self._check_aliens_bottom
+        self._check_aliens_bottom()
             
     def _check_fleet_edges(self):
         """Odpowiednia reakcja, gdy obcy dotrze do krawędzi ekranu."""
