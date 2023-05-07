@@ -40,6 +40,10 @@ class AlienInvasion:
         self.sound_effects = SoundEffects()
         self.sound_effects.play_background_music()
         
+        #Odtworzenie najlepszego wyniku
+        self.sb.load_score()
+        self.sb.prep_high_score()
+        self.sb.show_score()
         
         
         
@@ -73,20 +77,15 @@ class AlienInvasion:
             
             self._update_screen()
             
-            
-            
-        
-        
-            
-            
-            
-            
-            
     def _check_events(self):
         """Reakcja na zdarzenia generowane przez klawiaturę i mysz."""
         #Oczekiwanie na naciśnięcie klawisza lub przycisku myszy.
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                #Odtworzenie najlepszego wyniku
+                filename = 'highscore.txt'
+                with open(filename, 'w') as file_object:
+                    file_object.write(str(self.stats.high_score))
                 sys.exit()  
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)    
@@ -282,7 +281,7 @@ class AlienInvasion:
         else:
             self.stats.game_active = False
             pygame.mouse.set_visible(True)
-            self.sound_effect_game_over.play() 
+            
         
     def _check_aliens_bottom(self):
         """Sprawdzenie, czy którykolwiek obcy dotarł do dolnej krawędzi ekranu."""
