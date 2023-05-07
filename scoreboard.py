@@ -59,13 +59,13 @@ class Scoreboard:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
             
-    def load_score(stats):
+    def load_score(self):
         """Odtworzenie najlepszego wyniku uzyskanego przez gracza."""
         filename = 'highscore.txt'
         try:
             with open(filename) as file_object:
                 score = file_object.read()
-                stats.high_score = int(score)
+                self.stats.high_score = int(score)
         except FileNotFoundError:
             pass
     

@@ -53,6 +53,8 @@ class AlienInvasion:
         self.sb.prep_high_score()
         self.sb.show_score()
         
+  
+        
         while True:
             #Odświeżenie ekranu w trakcie każdej iteracji pętli.
             self._check_events()
@@ -70,6 +72,8 @@ class AlienInvasion:
                     self.bullets.remove(bullet)
             
             self._update_screen()
+            
+            
             
         
         
