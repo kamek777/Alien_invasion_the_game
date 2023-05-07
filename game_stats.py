@@ -21,3 +21,6 @@ class GameStats:
     def get_score(self):
         """Wyświetlenie wyniku."""
         return self.score
+    
+    
+    

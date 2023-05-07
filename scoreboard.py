@@ -59,6 +59,16 @@ class Scoreboard:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
             
+    def load_score(stats):
+        """Odtworzenie najlepszego wyniku uzyskanego przez gracza."""
+        filename = 'highscore.txt'
+        try:
+            with open(filename) as file_object:
+                score = file_object.read()
+                stats.high_score = int(score)
+        except FileNotFoundError:
+            pass
+    
     def prep_level(self):
         """Konwersja numeru poziomu na wygenerowany obraz."""
         level_str = str(self.stats.level)
@@ -77,4 +87,5 @@ class Scoreboard:
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10 
             self.ships.add(ship)
+            
     

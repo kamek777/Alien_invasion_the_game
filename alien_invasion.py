@@ -45,6 +45,14 @@ class AlienInvasion:
         
     def run_game(self):
         """Rozpoczęcie pętli głównej gry."""
+        
+        
+        
+        #Wczytanie najlepszego wyniku
+        self.sb.load_score()
+        self.sb.prep_high_score()
+        self.sb.show_score()
+        
         while True:
             #Odświeżenie ekranu w trakcie każdej iteracji pętli.
             self._check_events()
@@ -53,7 +61,7 @@ class AlienInvasion:
                 self.ship.update()
                 self._update_bullets()
                 self._update_aliens()
-               
+                
             self._update_screen()
             
             #Usunięcie pocisków, które znajdują się poza ekranem.
@@ -62,6 +70,13 @@ class AlienInvasion:
                     self.bullets.remove(bullet)
             
             self._update_screen()
+            
+        
+        
+            
+            
+            
+            
             
     def _check_events(self):
         """Reakcja na zdarzenia generowane przez klawiaturę i mysz."""
@@ -273,7 +288,8 @@ class AlienInvasion:
                 #Tak samo jak w przypadku zderzenia statku z obcym.
                 self._ship_hit()
                 break
-
+            
+    
 
 if __name__ == '__main__':
     #Utworzenie egzemplarza gry i jej uruchomienie.
