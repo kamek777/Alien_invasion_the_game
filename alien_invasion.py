@@ -11,7 +11,6 @@ from ship import Ship
 from bullet import Bullet
 from alien import Alien
 from sounds import SoundEffects
-
 class AlienInvasion:
     """Ogólna klasa przeznaczona do zarządzania zasobami i sposobem działania gry."""
     def __init__(self):
