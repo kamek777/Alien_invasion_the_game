@@ -22,7 +22,7 @@ class Settings:
         self.fleet_drop_speed = 10
         
         #Łatwa zmiana szybkości gry.
-        self.speedup_scale = 1.1
+        self.speedup_scale = 1.2
         
         #Łatwa zmiana liczby puntków przyznawanych za zestrzelenie obcego.
         self.score_scale = 1.5
