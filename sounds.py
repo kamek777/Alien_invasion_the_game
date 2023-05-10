@@ -6,7 +6,7 @@ class SoundEffects:
     def __init__(self):
         """Inicjalizacja efektów dźwiękowych w grze."""
         pygame.mixer.init()
-        self.background_music = pygame.mixer.music.load("background_game.mp3")
+        self.background_music = pygame.mixer.music.load("background.mp3")
         self.sound_effect_game_over = pygame.mixer.Sound("game_over.wav")
         self.sound_effect_hit_ship = pygame.mixer.Sound("hit.wav")
         

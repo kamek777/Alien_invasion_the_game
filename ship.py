@@ -13,7 +13,7 @@ class Ship(Sprite):
         #Wczytanie obrazu statku kosmicznego i pobranie jego prostokąta.
         self.image = pygame.image.load('C:/Users/PC/OneDrive/Pulpit/projekty_pythona/project_strzelajacy_statek/images/spiderman.bmp')
         #Zmiana rozmiaru statku
-        self.image = pygame.transform.scale(self.image, (50, 50))
+        self.image = pygame.transform.scale(self.image, (70, 70))
         self.rect = self.image.get_rect()
         
         #Każdy nowy statek kosmiczny pojawia się na dole ekranu.

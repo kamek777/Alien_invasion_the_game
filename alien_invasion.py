@@ -33,7 +33,7 @@ class AlienInvasion:
         self._create_fleet()
         
         #Utworzenie przycisku Gra
-        self.play_button = Button(self, self.screen, "Rozpocznij grę!")
+        self.play_button = Button(self, self.screen, "Rozpocznij grę! Aby zakończyć wciśnij q")
         
         #Utworzenie muzyki w grze
         self.sound_effects = SoundEffects()
@@ -56,10 +56,21 @@ class AlienInvasion:
         self.sb.prep_high_score()
         self.sb.show_score()
         
+        # Inicjalizacja Pygame
+        pygame.init()
+
+        # Tworzenie obiektu klasy Settings
+        game_settings = Settings()
+        # Ustawienie trybu pełnoekranowego
+        screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height), pygame.FULLSCREEN)
+
+        
   
         
         while True:
             #Odświeżenie ekranu w trakcie każdej iteracji pętli.
+             # Aktualizacja ekranu
+            pygame.display.flip()
             self._check_events()
             
             if self.stats.game_active:
@@ -190,13 +201,13 @@ class AlienInvasion:
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
         available_space_x = self.settings.screen_width - (2 * alien_width)
-        number_aliens_x = 6
+        number_aliens_x = 10
         #available_space_x // (2 * alien_width)
         
         #Ustawienie, ile rzędów obcych zmieści się na ekranie.
         ship_height = self.ship.rect.height
         available_space_y = (self.settings.screen_height - (3 * alien_height) - ship_height)
-        number_rows = available_space_y // (2 * alien_height)
+        number_rows = 3
         
         #Utworzenie pełnej floty obcych.
         for row_number in range(number_rows):

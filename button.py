@@ -10,8 +10,8 @@ class Button():
         self.screen_rect = self.screen.get_rect()
         
         #Zdefiniowanie wymiarów i właściwości przycisku.
-        self.width, self.height = 250, 50
-        self.button_color = (150, 255, 100)
+        self.width, self.height = 700, 50
+        self.button_color = (0, 0, 255)
         self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 48)
         
