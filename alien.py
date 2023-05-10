@@ -11,7 +11,7 @@ class Alien(Sprite):
         self.settings = ai_game.settings
         
         #Wczytanie obraczu obceo i zdefiniowanie jego atrybutu rect.
-        self.image = pygame.image.load('C:/Users/PC/OneDrive/Pulpit/projekty_pythona/project_strzelajacy_statek/images/alien.bmp')
+        self.image = pygame.image.load('C:/Users/PC/OneDrive/Pulpit/projekty_pythona/project_strzelajacy_statek/images/robber.bmp')
         self.image = pygame.transform.scale(self.image, (90, 90))
         self.rect = self.image.get_rect()
         

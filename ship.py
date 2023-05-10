@@ -11,7 +11,7 @@ class Ship(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
         
         #Wczytanie obrazu statku kosmicznego i pobranie jego prostokąta.
-        self.image = pygame.image.load('C:/Users/PC/OneDrive/Pulpit/projekty_pythona/project_strzelajacy_statek/images/ship.bmp')
+        self.image = pygame.image.load('C:/Users/PC/OneDrive/Pulpit/projekty_pythona/project_strzelajacy_statek/images/spiderman.bmp')
         #Zmiana rozmiaru statku
         self.image = pygame.transform.scale(self.image, (50, 50))
         self.rect = self.image.get_rect()
