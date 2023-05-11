@@ -126,7 +126,6 @@ class AlienInvasion:
             #Ukrycie kursora myszy podczas grania.
             pygame.mouse.set_visible(False)
             
-            
             #Wyświetlenie pozostałej ilości statków do wykorzystania przez gracza.
             self.sb.prep_score()
             self.sb.prep_level()
