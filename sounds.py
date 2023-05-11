@@ -1,5 +1,4 @@
 import pygame.mixer
-
 class SoundEffects:
     """Klasa przechowująca wszystkie elementy dźwiękowe w grze."""
     
