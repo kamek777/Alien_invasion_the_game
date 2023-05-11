@@ -64,9 +64,6 @@ class AlienInvasion:
         # Ustawienie trybu pełnoekranowego
         screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height), pygame.FULLSCREEN)
 
-        
-  
-        
         while True:
             #Odświeżenie ekranu w trakcie każdej iteracji pętli.
              # Aktualizacja ekranu
