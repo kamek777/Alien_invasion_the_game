@@ -299,7 +299,6 @@ class AlienInvasion:
                 break
             
     
-
 if __name__ == '__main__':
     #Utworzenie egzemplarza gry i jej uruchomienie.
     ai = AlienInvasion()
