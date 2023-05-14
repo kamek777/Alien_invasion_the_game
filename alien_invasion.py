@@ -113,7 +113,6 @@ class AlienInvasion:
             #Usunięcie zawartości list aliens i bullets.
             self.aliens.empty()
             self.bullets.empty()
-            
             self.sb.prep_level()
             
             #Utworzenie nowej floty i wyśrodkowanie statku.
