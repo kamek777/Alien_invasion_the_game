@@ -1,6 +1,5 @@
 import pygame.font
 
-
 class Button():
     """Inicjalizacja utworzenia przycisku umożliwiającego rozpoczęcie gry."""
     
