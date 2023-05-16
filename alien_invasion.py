@@ -234,10 +234,8 @@ class AlienInvasion:
         pygame.display.flip()           
     
     def _update_aliens(self):
-        """
-        Sprawdzenie, czy flota obcych znajduje się przy krawędzi, a następnie uaktualnienie
-        położenia wszystkich obcych we flocie.
-        """
+        """Sprawdzenie, czy flota obcych znajduje się przy krawędzi, a następnie uaktualnienie
+        położenia wszystkich obcych we flocie."""
         self._check_fleet_edges()
         self.aliens.update()
         
