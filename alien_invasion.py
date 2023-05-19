@@ -181,7 +181,6 @@ class AlienInvasion:
             self._create_fleet()    
             self.settings.increase_speed() 
             
-            
             #Inkrementacja numeru poziomu.
             self.stats.level += 1 
             self.sb.prep_level()
@@ -279,7 +278,6 @@ class AlienInvasion:
             #Pauza
             sleep(0.5)
             
-        
         else:
             self.stats.game_active = False
             pygame.mouse.set_visible(True)
@@ -294,7 +292,6 @@ class AlienInvasion:
                 self._ship_hit()
                 break
             
-    
 if __name__ == '__main__':
     #Utworzenie egzemplarza gry i jej uruchomienie.
     ai = AlienInvasion()
