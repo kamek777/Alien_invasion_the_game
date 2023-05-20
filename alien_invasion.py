@@ -292,6 +292,7 @@ class AlienInvasion:
                 self._ship_hit()
                 break
             
+
 if __name__ == '__main__':
     #Utworzenie egzemplarza gry i jej uruchomienie.
     ai = AlienInvasion()
