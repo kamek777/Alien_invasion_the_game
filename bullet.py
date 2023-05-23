@@ -2,7 +2,6 @@ from typing import Any
 import pygame
 
 from pygame.sprite import Sprite
-
 class Bullet(Sprite):
     """Klasa przeznaczona do zarządzania pociskami wystrzeliwanymi przez statek."""
     
