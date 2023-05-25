@@ -15,10 +15,6 @@ class GameStats:
         #Najlepszy wynik nigdy nie powinien być wyzerowany.
         self.high_score = 0
         
-        
-        
-        
-        
     def reset_stats(self):
         """Inicjalizacja danych statystycznych, które mogą zmieniać się w trakcie gry."""
         self.ships_left = self.settings.ship_limit
