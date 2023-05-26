@@ -8,10 +8,9 @@ class GameStats:
         self.settings = ai_game.settings
         self.reset_stats()
         
-        
         #Uruchomienie gry w stanie nieaktywnym.
         self.game_active = False
-        
+    
         #Najlepszy wynik nigdy nie powinien być wyzerowany.
         self.high_score = 0
         
