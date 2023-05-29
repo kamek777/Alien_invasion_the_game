@@ -13,7 +13,6 @@ from alien import Alien
 from sounds import SoundEffects
 
 #Główny plik zawierający pętlę gry.
-
 class AlienInvasion:
     """Ogólna klasa przeznaczona do zarządzania zasobami i sposobem działania gry."""
     def __init__(self):
