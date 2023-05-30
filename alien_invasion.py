@@ -46,7 +46,6 @@ class AlienInvasion:
         self.sb.prep_high_score()
         self.sb.show_score()
         
-        
     def run_game(self):
         """Rozpoczęcie pętli głównej gry."""
         
